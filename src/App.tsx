@@ -1,8 +1,21 @@
 
+import Container from "react-bootstrap/Container"
+import { Routes, Route } from 'react-router-dom'
+import Navigation from './components/Navigation'
+import Home from './pages/Home'
+
 function App() {
 
   return (
-    <h1>Star Wars</h1>
+    <div id="App">
+      <Navigation />
+
+      <Container>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Container>
+    </div>
 
   )
 }
