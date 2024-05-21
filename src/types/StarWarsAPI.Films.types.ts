@@ -1,12 +1,14 @@
+import { NestedTypes } from '../types/Nested.Types'
 
-interface StarWarsFilms {
+export interface StarWarsFilms {
     id: number,
     title: string,
     episode_id: number,
     opening_crawl: string,
     director: string,
     producer: string,
-    release_date: Date,
+    release_date: String,
+    image_url: string,
     created: string,
     edited: string,
     characters_count: number,
@@ -16,7 +18,7 @@ interface StarWarsFilms {
     species_count: number
 }
 
-interface StarWarsFilm {
+export interface StarWarsFilm {
     id: number;
     title: string;
     episode_id: number;

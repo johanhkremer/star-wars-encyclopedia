@@ -1,4 +1,4 @@
-interface StarWarsPlanets {
+export interface StarWarsPlanets {
     id: number;
     name: string;
     rotation_period: string;
@@ -15,7 +15,7 @@ interface StarWarsPlanets {
     films_count: number;
 }
 
-interface StarWarsPlanet {
+export interface StarWarsPlanet {
     id: number;
     name: string;
     rotation_period: string;

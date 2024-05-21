@@ -1,4 +1,4 @@
-interface StarWarsStarships {
+export interface StarWarsStarships {
     id: number;
     name: string;
     model: string;
@@ -19,7 +19,7 @@ interface StarWarsStarships {
     films_count: number;
 }
 
-interface StarWarsStarship {
+export interface StarWarsStarship {
     id: number;
     name: string;
     model: string;

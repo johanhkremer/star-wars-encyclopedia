@@ -1,4 +1,4 @@
-interface StarWarsSpecies {
+export interface StarWarsSpeciesMuliple {
     id: number;
     name: string;
     classification: string;
@@ -19,7 +19,7 @@ interface StarWarsSpecies {
     };
 }
 
-interface StarWarsSpecies {
+export interface StarWarsSpeciesSingle {
     id: number;
     name: string;
     classification: string;

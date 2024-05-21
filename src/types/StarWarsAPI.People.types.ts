@@ -1,4 +1,4 @@
-interface StarWarsPeople {
+export interface StarWarsPeople {
     id: number;
     name: string;
     birth_year: string;
@@ -19,7 +19,7 @@ interface StarWarsPeople {
     };
 }
 
-interface StarWarsPerson {
+export interface StarWarsPerson {
     id: number;
     name: string;
     birth_year: string;

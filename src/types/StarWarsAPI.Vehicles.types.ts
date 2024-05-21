@@ -1,4 +1,4 @@
-interface StarWarsVehicle {
+export interface StarWarsVehicles {
     id: number;
     name: string;
     model: string;
@@ -17,7 +17,7 @@ interface StarWarsVehicle {
     films_count: number;
 }
 
-interface StarWarsVehicle {
+export interface StarWarsVehicle {
     id: number;
     name: string;
     model: string;
