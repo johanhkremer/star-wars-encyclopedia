@@ -9,6 +9,7 @@ import Films from './pages/Films'
 import Species from './pages/Species'
 import Starships from './pages/Starships'
 import Vehicles from './pages/Vehicles'
+import Film from "./pages/Film"
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/people" element={<People />} />
           <Route path="/planets" element={<Planets />} />
           <Route path="/films" element={<Films />} />
+          <Route path="/films/:id" element={<Film />} />
           <Route path="/species" element={<Species />} />
           <Route path="/vehicles" element={<Vehicles />} />
           <Route path="/starships" element={<Starships />} />

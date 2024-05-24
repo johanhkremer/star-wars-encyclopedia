@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { getFilms } from '../services/StarWarsAPI';
-import { StarWarsFilms } from '../types/StarWarsAPI.Films.types';
+import { StarWarsFilms } from '../types/StarWarsAPI.types';
 import FilmCards from '../components/FilmCards';
+import Search from '../components/search';
 
 const Films = () => {
     const [error, setError] = useState<string | null>(null);
@@ -29,6 +30,8 @@ const Films = () => {
     return (
         <>
             <h1>Films</h1>
+            <Search />
+
             {loading && <p>Loading...</p>}
             {error && <p>Error: {error}</p>}
             {!loading && !error && filmsResults.length > 0 && (
