@@ -40,40 +40,75 @@ export const getResourceById = async <T>(endpoint: string, id: number): Promise<
     return response.data;
 };
 
-export const getResourceBySearch = async <T>(endpoint: string, input: string): Promise<T[]> => {
-    const response = await instance.get<ApiResponse<T>>(`${endpoint}/${input}`)
-    return response.data.data
-}
-
 // Specific functions using the generic function
 
 //Films
 export const getFilms = () => getResource<StarWarsFilms>('/films');
 export const getFilm = (id: number) => getResourceById<StarWarsFilm>('/films', id);
-export const getFilmSearch = (input: string) => getResource<StarWarsFilms>(`/films/${input}`)
+export const getFilmSearch = async (input: string) => {
+    const response = await instance.get<ApiResponse<StarWarsFilms>>(`/films`, {
+        params: {
+            search: input
+        }
+    });
+    return response.data.data;
+};
 
 //People
 export const getPeople = () => getResource<StarWarsPeople>('/people');
 export const getPerson = (id: number) => getResourceById<StarWarsPerson>('/people', id);
-export const getPeopleSearch = (input: string) => getResource<StarWarsPeople>(`/people/${input}`)
-
+export const getPeopleSearch = async (input: string) => {
+    const response = await instance.get<ApiResponse<StarWarsPeople>>(`/people`, {
+        params: {
+            search: input
+        }
+    });
+    return response.data.data;
+};
 //Planets
 export const getPlanets = () => getResource<StarWarsPlanets>('/planets');
 export const getPlanet = (id: number) => getResourceById<StarWarsPlanet>('/planets', id);
-export const getPlanetsSearch = (input: string) => getResource<StarWarsPlanets>(`/planets/${input}`);
-
+export const getPlanetsSearch = async (input: string) => {
+    const response = await instance.get<ApiResponse<StarWarsPlanets>>(`/planets`, {
+        params: {
+            search: input
+        }
+    });
+    return response.data.data;
+};
 //Species
 export const getSpecies = () => getResource<StarWarsSpeciesMuliple>('/species');
 export const getSpeciesSingle = (id: number) => getResourceById<StarWarsSpeciesSingle>('/species', id);
-export const getSpeciesSearch = (input: string) => getResource<StarWarsSpeciesMuliple>(`/species/${input}`);
+export const getSpeciesSearch = async (input: string) => {
+    const response = await instance.get<ApiResponse<StarWarsSpeciesMuliple>>(`/species`, {
+        params: {
+            search: input
+        }
+    });
+    return response.data.data;
+};
 
 
 //Starships
 export const getStarships = () => getResource<StarWarsStarships>('/starships');
 export const getStarship = (id: number) => getResourceById<StarWarsStarship>('/starships', id);
-export const getStarshipsSearch = (input: string) => getResource<StarWarsStarships>(`/starships/${input}`)
+export const getStarshipsSearch = async (input: string) => {
+    const response = await instance.get<ApiResponse<StarWarsStarships>>(`/starships`, {
+        params: {
+            search: input
+        }
+    });
+    return response.data.data;
+};
 
 //Vehicles
 export const getVehicles = () => getResource<StarWarsVehicles>('/vehicles');
 export const getVehicle = (id: number) => getResourceById<StarWarsVehicle>('/vehicles', id);
-export const getVehiclesSearch = (input: string) => getResource<StarWarsVehicles>(`/vehicles/${input}`)
+export const getVehiclesSearch = async (input: string) => {
+    const response = await instance.get<ApiResponse<StarWarsVehicles>>(`/vehicles`, {
+        params: {
+            search: input
+        }
+    });
+    return response.data.data;
+};
