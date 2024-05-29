@@ -59,3 +59,35 @@ export const getPeople = (search: string, page: number) => {
 };
 
 export const getPerson = (id: number) => getResourceById<StarWarsPerson>('/people', id);
+
+// Planets
+export const getPlanets = (search: string, page: number) => {
+    const params = { search, page: page.toString() };
+    return getResource<StarWarsPlanets>('planets/', params);
+};
+
+export const getPlanet = (id: number) => getResourceById<StarWarsPlanet>('/planets', id);
+
+// Species
+export const getSpecies = (search: string, page: number) => {
+    const params = { search, page: page.toString() };
+    return getResource<StarWarsSpeciesMuliple>('species/', params);
+};
+
+export const getSpeciesSingle = (id: number) => getResourceById<StarWarsSpeciesSingle>('/species', id);
+
+// Starships
+export const getStarships = (search: string, page: number) => {
+    const params = { search, page: page.toString() };
+    return getResource<StarWarsStarships>('starships/', params);
+};
+
+export const getStarship = (id: number) => getResourceById<StarWarsStarship>('/starships', id);
+
+// Vehicles
+export const getVehicles = (search: string, page: number) => {
+    const params = { search, page: page.toString() };
+    return getResource<StarWarsVehicles>('vehicles/', params);
+};
+
+export const getVehicle = (id: number) => getResourceById<StarWarsVehicle>('/vehicles', id);

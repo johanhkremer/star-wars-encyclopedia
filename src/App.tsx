@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import People from './pages/People'
 import Planets from './pages/Planets'
 import Films from './pages/Films'
-import Species from './pages/Species'
+import SpeciesMultiple from './pages/SpeciesMultiple'
 import Starships from './pages/Starships'
 import Vehicles from './pages/Vehicles'
 import Film from "./pages/Film"
@@ -24,7 +24,7 @@ function App() {
           <Route path="/planets" element={<Planets />} />
           <Route path="/films" element={<Films />} />
           <Route path="/films/:id" element={<Film />} />
-          <Route path="/species" element={<Species />} />
+          <Route path="/species" element={<SpeciesMultiple />} />
           <Route path="/vehicles" element={<Vehicles />} />
           <Route path="/starships" element={<Starships />} />
           <Route path="*">"404 Not Found"</Route>
