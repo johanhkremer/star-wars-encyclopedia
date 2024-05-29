@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { StarWarsFilm } from '../types/StarWarsAPI.types';
 import { getFilm } from '../services/StarWarsAPI';
-import { Button, Card, Figure, ListGroup } from 'react-bootstrap';
+import { Figure } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 const Film = () => {

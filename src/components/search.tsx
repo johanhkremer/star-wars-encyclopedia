@@ -5,11 +5,11 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 interface SearchProps<T> {
-    searchFunction: (input: string) => Promise<T[]>;
+    searchFunction: (input: string) => Promise<void>;
     onSearchResults: (results: T[]) => void;
 }
 
-const Search = <T,>({ searchFunction, onSearchResults }: SearchProps<T>): JSX.Element => {
+const Search = <T,>({ searchFunction }: SearchProps<T>): JSX.Element => {
     const [input, setInput] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
@@ -19,8 +19,7 @@ const Search = <T,>({ searchFunction, onSearchResults }: SearchProps<T>): JSX.El
         setLoading(true);
         setError(null);
         try {
-            const data = await searchFunction(input);
-            onSearchResults(data);
+            await searchFunction(input);
         } catch (error) {
             setError('An error occurred while searching.');
         } finally {

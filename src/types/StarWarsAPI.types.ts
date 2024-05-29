@@ -1,16 +1,3 @@
-//Interface for nested objects
-interface NameType {
-    id: number;
-    name: string;
-}
-
-interface TitleType {
-    id: number;
-    name: string;
-}
-
-type NameOrTitle = NameType | TitleType;
-
 //Films interfaces
 export interface StarWarsFilms {
     id: number,
@@ -27,7 +14,7 @@ export interface StarWarsFilms {
     planets_count: number,
     starships_count: number,
     vehicles_count: number,
-    species_count: number
+    species_count: number,
 }
 
 export interface StarWarsFilm {
@@ -43,12 +30,24 @@ export interface StarWarsFilm {
     edited: string;
     characters: {
         id: number;
-        name: string
+        name: string;
     }[];
-    planets: NameOrTitle[];
-    starships: NameOrTitle[];
-    vehicles: NameOrTitle[];
-    species: NameOrTitle[];
+    planets: {
+        id: number;
+        name: string;
+    }[];
+    starships: {
+        id: number;
+        name: string;
+    }[];
+    vehicles: {
+        id: number;
+        name: string;
+    }[];
+    species: {
+        id: number;
+        name: string;
+    }[];
 }
 
 //People interfaces
@@ -61,6 +60,8 @@ export interface StarWarsPeople {
     height: string;
     mass: string;
     skin_color: string;
+    wiki_link: string,
+    image_url: string,
     created: string;
     edited: string;
     films_count: number;
@@ -82,6 +83,8 @@ export interface StarWarsPerson {
     height: string;
     mass: string;
     skin_color: string;
+    wiki_link: string,
+    image_url: string,
     created: string;
     edited: string;
     homeworld: {
