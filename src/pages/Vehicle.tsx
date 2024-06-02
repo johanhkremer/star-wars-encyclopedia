@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { StarWarsVehicle } from '../types/StarWarsAPI.types';
 import { getVehicle } from '../services/StarWarsAPI';
-import { Card, Col, Figure, ListGroup, Row } from 'react-bootstrap';
+import { Card, Col, ListGroup, Row } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 
 const Vehicle = () => {
