@@ -1,0 +1,34 @@
+.img-xs {
+    max-height: 10rem;
+}
+
+.img-sm {
+    max-height: 12rem;
+}
+
+.img-md {
+    max-height: 15rem;
+}
+
+.img-lg {
+    max-height: 35rem;
+}
+
+
+@media (min-width: 576px) {
+    .img-sm {
+        max-height: 12rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .img-md {
+        max-height: 15rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .img-lg {
+        max-height: 15rem;
+    }
+}

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { StarWarsVehicle } from '../types/StarWarsAPI.types';
 import { getVehicle } from '../services/StarWarsAPI';
-import { Figure } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Card, Col, Figure, ListGroup, Row } from 'react-bootstrap';
+import { Link, useParams } from 'react-router-dom';
 
 const Vehicle = () => {
     const { id } = useParams<{ id: string }>();
@@ -38,34 +38,44 @@ const Vehicle = () => {
 
     return (
         <>
-            <div>Vehicle</div>
             {loading && <p>Loading...</p>}
-            {error && <p>Something went wrong: {error}</p>}
             {vehicle && (
-                <Figure>
-                    <Figure.Caption>
-                        <strong>Name:</strong> {vehicle.name}<br />
-                        <strong>Model:</strong> {vehicle.model}<br />
-                        <strong>Manufacturer:</strong> {vehicle.manufacturer}<br />
-                        <strong>Cost:</strong> {vehicle.cost_in_credits} credits<br />
-                        <strong>Length:</strong> {vehicle.length} meters<br />
-                        <strong>Max Atmosphering Speed:</strong> {vehicle.max_atmosphering_speed}<br />
-                        <strong>Crew:</strong> {vehicle.crew}<br />
-                        <strong>Passengers:</strong> {vehicle.passengers}<br />
-                        <strong>Cargo Capacity:</strong> {vehicle.cargo_capacity}<br />
-                        <strong>Consumables:</strong> {vehicle.consumables}<br />
-                        <strong>Vehicle Class:</strong> {vehicle.vehicle_class}<br />
-                        <strong>Movies:</strong>
-                        <ul>
-                            {vehicle.films.map(film => (
-                                <li key={film.id}>{film.title}</li>
-                            ))}
-                        </ul>
-                    </Figure.Caption>
-                </Figure>
+                <Row className="justify-content-center mt-3 mb-3">
+                    <Col xs={12} md={8} lg={10}>
+                        <Card className='p-3 d-flex flex-column align-items-center'>
+                            <Card.Body>
+                                <Card.Title><h1>{vehicle.name}</h1></Card.Title>
+                                <Card.Text>
+                                    <h2>Info:</h2>
+                                    <p>Model: {vehicle.model}</p>
+                                    <p>Manufacturer: {vehicle.manufacturer}</p>
+                                    <p>Cost: {vehicle.cost_in_credits} credits</p>
+                                    <p>Length: {vehicle.length} meters</p>
+                                    <p>Max Atmosphering Speed: {vehicle.max_atmosphering_speed}</p>
+                                    <p>Crew: {vehicle.crew}</p>
+                                    <p>Passengers: {vehicle.passengers}</p>
+                                    <p>Cargo Capacity: {vehicle.cargo_capacity}</p>
+                                    <p>Consumables: {vehicle.consumables}</p>
+                                    <p>Vehicle Class: {vehicle.vehicle_class}</p>
+                                </Card.Text>
+                                <ListGroup variant="flush">
+                                    <h3>Movies:</h3>
+                                    {vehicle.films.map(film => (
+                                        <ListGroup.Item key={film.id}>
+                                            <Link to={`/films/${film.id}`}>{film.title}</Link>
+                                        </ListGroup.Item>
+                                    ))}
+                                </ListGroup>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
             )}
+            {error && <p>Something went wrong: {error}</p>}
         </>
     );
 };
 
 export default Vehicle;
+
+

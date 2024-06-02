@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { StarWarsStarship } from '../types/StarWarsAPI.types';
 import { getStarship } from '../services/StarWarsAPI';
-import { Figure } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Card, Col, ListGroup, Row } from 'react-bootstrap';
+import { Link, useParams } from 'react-router-dom';
 
 const Starship = () => {
     const { id } = useParams<{ id: string }>();
@@ -38,35 +38,45 @@ const Starship = () => {
 
     return (
         <>
-            <div>Starship</div>
             {loading && <p>Loading...</p>}
-            {error && <p>Something went wrong: {error}</p>}
             {starship && (
-                <Figure>
-                    <Figure.Caption>
-                        <strong>Name:</strong> {starship.name}<br />
-                        <strong>Model:</strong> {starship.model}<br />
-                        <strong>Manufacturer:</strong> {starship.manufacturer}<br />
-                        <strong>Cost:</strong> {starship.cost_in_credits} credits<br />
-                        <strong>Length:</strong> {starship.length} meters<br />
-                        <strong>Max Atmosphering Speed:</strong> {starship.max_atmosphering_speed}<br />
-                        <strong>Crew:</strong> {starship.crew}<br />
-                        <strong>Passengers:</strong> {starship.passengers}<br />
-                        <strong>Cargo Capacity:</strong> {starship.cargo_capacity}<br />
-                        <strong>Consumables:</strong> {starship.consumables}<br />
-                        <strong>Hyperdrive Rating:</strong> {starship.hyperdrive_rating}<br />
-                        <strong>MGLT:</strong> {starship.MGLT}<br />
-                        <strong>Movies:</strong>
-                        <ul>
-                            {starship.films.map(film => (
-                                <li key={film.id}>{film.title}</li>
-                            ))}
-                        </ul>
-                    </Figure.Caption>
-                </Figure>
+                <Row className="justify-content-center mt-3 mb-3">
+                    <Col xs={12} md={8} lg={10}>
+                        <Card className='p-3 d-flex flex-column align-items-center'>
+                            <Card.Body>
+                                <Card.Title><h1>{starship.name}</h1></Card.Title>
+                                <Card.Text>
+                                    <h2>Info:</h2>
+                                    <p>Model: {starship.model}</p>
+                                    <p>Manufacturer: {starship.manufacturer}</p>
+                                    <p>Cost: {starship.cost_in_credits} credits</p>
+                                    <p>Length: {starship.length} meters</p>
+                                    <p>Max Atmosphering Speed: {starship.max_atmosphering_speed}</p>
+                                    <p>Crew: {starship.crew}</p>
+                                    <p>Passengers: {starship.passengers}</p>
+                                    <p>Cargo Capacity: {starship.cargo_capacity}</p>
+                                    <p>Consumables: {starship.consumables}</p>
+                                    <p>Hyperdrive Rating: {starship.hyperdrive_rating}</p>
+                                    <p>MGLT: {starship.MGLT}</p>
+                                </Card.Text>
+                                <ListGroup variant="flush">
+                                    <h3>Movies:</h3>
+                                    {starship.films.map(film => (
+                                        <ListGroup.Item key={film.id}>
+                                            <Link to={`/films/${film.id}`}>{film.title}</Link>
+                                        </ListGroup.Item>
+                                    ))}
+                                </ListGroup>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
             )}
+            {error && <p>Something went wrong: {error}</p>}
         </>
     );
 };
 
 export default Starship;
+
+

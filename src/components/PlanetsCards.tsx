@@ -15,14 +15,9 @@ const PlanetsCards: React.FC<PlanetsCardsProps> = ({ planets }) => {
                     <Card style={{ width: '100%', height: '100%' }}>
                         <Card.Body style={{ height: 'auto', overflow: 'hidden' }}>
                             <Card.Title>{planet.name}</Card.Title>
-                            <Card.Text>
-                                Population: {planet.population}
-                            </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroup.Item>Climate: {planet.climate}</ListGroup.Item>
-                            <ListGroup.Item>Terrain: {planet.terrain}</ListGroup.Item>
-                            <ListGroup.Item>Gravity: {planet.gravity}</ListGroup.Item>
+                            <ListGroup.Item>Size: {planet.diameter} km</ListGroup.Item>
                         </ListGroup>
                         <Card.Body>
                             <Card.Link href={`/planets/${planet.id}`}>Read more</Card.Link>

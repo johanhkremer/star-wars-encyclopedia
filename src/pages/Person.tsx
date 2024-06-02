@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { StarWarsPerson } from '../types/StarWarsAPI.types';
 import { getPerson } from '../services/StarWarsAPI';
-import { Figure } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Figure, Card, Col, Row } from 'react-bootstrap';
+import { Link, useParams } from 'react-router-dom';
+import '../assets/styles/scss/peopleCards.scss'
 
 const Person = () => {
     const { id } = useParams<{ id: string }>();
@@ -38,31 +39,71 @@ const Person = () => {
 
     return (
         <>
-            <div>Person</div>
             {loading && <p>Loading...</p>}
-            {error && <p>Something went wrong: {error}</p>}
 
             {person && (
-                <Figure>
-                    <Figure.Image
-                        width={171}
-                        height={180}
-                        alt="171x180"
-                        src={person.image_url}
-                    />
-                    <Figure.Caption>
-                        {person.name},
-                        <strong>Movies:</strong>
-                        <ul>
-                            {person.films.map(films => (
-                                <li key={films.id}>{films.title}</li>
-                            ))}
-                        </ul>
-                    </Figure.Caption>
-                </Figure>
+
+                <Row className="justify-content-center mt-3 mb-3">
+                    <Col xs={12} md={8} lg={10}>
+                        <Card className="p-3">
+                            <Card.Body>
+                                <Figure className='d-flex flex-column align-items-center'>
+                                    <h1>{person.name}</h1>
+                                    <Figure.Image
+                                        width={171}
+                                        height={180}
+                                        alt="171x180"
+                                        src={person.image_url}
+                                    />
+                                    <Figure.Caption className=''>
+                                        <strong>Info:</strong>
+                                        <p>Birth year: {person.birth_year}</p>
+                                        <p>Eye color: {person.eye_color}</p>
+                                        <p>Hair color: {person.hair_color}</p>
+                                        <p>Hight: {person.height}</p>
+                                        <p>Size: {person.mass}</p>
+                                        <p>Skin: {person.skin_color}</p>
+                                    </Figure.Caption>
+                                    <ul>
+                                        <strong>Films:</strong>
+                                        {person.films.map(film => (
+                                            <li key={film.id}>
+                                                <Link to={`/films/${film.id}`}>{film.title}</Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    {person.vehicles.length > 0 && (
+                                        <ul>
+                                            <strong>Vehicles:</strong>
+                                            {person.vehicles.map(vehicle => (
+                                                <li key={vehicle.id}>
+                                                    <Link to={`/vehicles/${vehicle.id}`}>{vehicle.name}</Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                    {person.starships.length > 0 && (
+                                        <ul>
+                                            <strong>Starships:</strong>
+                                            {person.starships.map(starship => (
+                                                <li key={starship.id}>
+                                                    <Link to={`/starships/${starship.id}`}>{starship.name}</Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </Figure>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+
             )}
+
+            {error && <p>Something went wrong: {error}</p>}
         </>
     );
 };
 
 export default Person;
+

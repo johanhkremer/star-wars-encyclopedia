@@ -1,0 +1,109 @@
+/* Global styles */
+body {
+    background-color: #212529;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+.card {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: lighter;
+    padding: 1rem;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Global link styles */
+a,
+.nav-link {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #953333;
+        text-decoration: none;
+    }
+
+    &:active {
+        color: #524B00;
+    }
+}
+
+/* Styles for links within cards */
+.card-link {
+    color: #962424;
+    font-weight: bolder;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #FF5733;
+        text-decoration: none;
+    }
+
+    &:active {
+        color: #C70039;
+    }
+}
+
+/* Global button styles */
+button,
+.btn {
+    background-color: #EEDB00;
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        background-color: #FFF8AD;
+        color: #000;
+    }
+
+    &:active {
+        background-color: #524B00;
+        color: #FFF;
+    }
+
+    &:disabled {
+        background-color: #cccccc;
+        color: #666666;
+        cursor: not-allowed;
+    }
+}
+
+/* Navbar-specific link styles */
+.navbar .nav-link {
+    color: #FFD700;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #FFA500;
+    }
+
+    &:active {
+        color: #FF4500;
+    }
+}
+
+/* Global image styles */
+img {
+    // border: 1px solid #ffffff;
+    /* White frame */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* Shadow effect */
+    border-radius: 0.25rem;
+    /* Optional: rounded corners */
+    transition: box-shadow 0.3s ease;
+    /* Smooth transition for shadow */
+}

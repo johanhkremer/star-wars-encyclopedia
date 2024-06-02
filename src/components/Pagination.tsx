@@ -19,7 +19,7 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
     return (
         <div className="d-flex justify-content-between align-items-center">
-            <div className="prev">
+            <div className="prev mb-3">
                 <Button
                     disabled={!hasPreviousPage}
                     onClick={onPreviousPage}
@@ -29,12 +29,12 @@ const Pagination: React.FC<PaginationProps> = ({
                 </Button>
             </div>
 
-            <div className="page">
+            <div className="page mb-3">
                 Page {page}
                 {totalPages && <>/{totalPages}</>}
             </div>
 
-            <div className="next">
+            <div className="next mb-3">
                 <Button
                     disabled={!hasNextPage}
                     onClick={onNextPage}

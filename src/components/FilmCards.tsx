@@ -18,12 +18,6 @@ const FilmCards: React.FC<FilmCardsProps> = ({ films }) => {
                             src={film.image_url}
                             style={{ height: 'auto', objectFit: 'cover' }} />
                         <Card.Body style={{ height: 'auto', overflow: 'hidden' }}>
-
-                            <Card.Text>
-                                {film.release_date}
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Body>
                             <Card.Link href={`/films/${film.id}`}>Read more</Card.Link>
                         </Card.Body>
                     </Card>
