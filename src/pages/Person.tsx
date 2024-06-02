@@ -1,15 +1,14 @@
-import { useEffect, useState } from 'react';
-import { StarWarsPerson } from '../types/StarWarsAPI.types';
-import { getPerson } from '../services/StarWarsAPI';
 import { Figure, Card, Col, Row } from 'react-bootstrap';
+import { getPerson } from '../services/StarWarsAPI';
 import { Link, useParams } from 'react-router-dom';
-import '../assets/styles/scss/peopleCards.scss'
+import { StarWarsPerson } from '../types/StarWarsAPI.types';
+import { useEffect, useState } from 'react';
 
 const Person = () => {
-    const { id } = useParams<{ id: string }>();
     const [error, setError] = useState<string | null>(null)
     const [loading, setLoading] = useState<boolean>(false);
     const [person, setPerson] = useState<StarWarsPerson | null>(null);
+    const { id } = useParams<{ id: string }>();
 
     useEffect(() => {
         const fetchPerson = async () => {

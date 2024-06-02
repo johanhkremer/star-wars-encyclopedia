@@ -42,8 +42,6 @@ export const getResourceById = async <T>(endpoint: string, id: number): Promise<
     return response.data;
 };
 
-// Specific functions using the generic function
-
 // Films
 export const getFilms = (search: string, page: number) => {
     const params = { search, page: page.toString() };

@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import { StarWarsStarship } from '../types/StarWarsAPI.types';
-import { getStarship } from '../services/StarWarsAPI';
 import { Card, Col, ListGroup, Row } from 'react-bootstrap';
+import { getStarship } from '../services/StarWarsAPI';
 import { Link, useParams } from 'react-router-dom';
+import { StarWarsStarship } from '../types/StarWarsAPI.types';
+import { useEffect, useState } from 'react';
 
 const Starship = () => {
-    const { id } = useParams<{ id: string }>();
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const [starship, setStarship] = useState<StarWarsStarship | null>(null);
+    const { id } = useParams<{ id: string }>();
 
     useEffect(() => {
         const fetchStarship = async () => {

@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import { StarWarsVehicle } from '../types/StarWarsAPI.types';
-import { getVehicle } from '../services/StarWarsAPI';
 import { Card, Col, ListGroup, Row } from 'react-bootstrap';
+import { getVehicle } from '../services/StarWarsAPI';
 import { Link, useParams } from 'react-router-dom';
+import { StarWarsVehicle } from '../types/StarWarsAPI.types';
+import { useEffect, useState } from 'react';
 
 const Vehicle = () => {
-    const { id } = useParams<{ id: string }>();
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const [vehicle, setVehicle] = useState<StarWarsVehicle | null>(null);
+    const { id } = useParams<{ id: string }>();
 
     useEffect(() => {
         const fetchVehicle = async () => {

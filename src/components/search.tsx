@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import React, { useState } from 'react';
+import Row from 'react-bootstrap/Row';
 
 interface SearchProps<T> {
     searchFunction: (input: string) => Promise<void>;
@@ -10,9 +10,9 @@ interface SearchProps<T> {
 }
 
 const Search = <T,>({ searchFunction }: SearchProps<T>): JSX.Element => {
+    const [error, setError] = useState<string | null>(null);
     const [input, setInput] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<string | null>(null);
 
     const handleSearch = async (event: React.FormEvent) => {
         event.preventDefault();

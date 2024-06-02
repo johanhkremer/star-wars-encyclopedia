@@ -1,6 +1,6 @@
-import Card from 'react-bootstrap/Card';
-import { StarWarsFilms } from '../types/StarWarsAPI.types';
 import { Col, Row } from 'react-bootstrap';
+import { StarWarsFilms } from '../types/StarWarsAPI.types';
+import Card from 'react-bootstrap/Card';
 
 interface FilmCardsProps {
     films: StarWarsFilms[];

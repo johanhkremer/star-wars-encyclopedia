@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
 import { getPlanets } from '../services/StarWarsAPI';
 import { StarWarsPlanets } from '../types/StarWarsAPI.types';
+import { useState, useEffect } from 'react';
+import Pagination from '../components/Pagination';
 import PlanetCards from '../components/PlanetsCards';
 import Search from '../components/Search';
-import Pagination from '../components/Pagination';
 
 const Planets = () => {
     const [error, setError] = useState<string | null>(null);
-    const [planetsResults, setPlanetsResults] = useState<StarWarsPlanets[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [page, setPage] = useState<number>(1);
+    const [planetsResults, setPlanetsResults] = useState<StarWarsPlanets[]>([]);
     const [totalPages, setTotalPages] = useState<number>(1);
 
     useEffect(() => {

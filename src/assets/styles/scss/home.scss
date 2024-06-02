@@ -3,14 +3,15 @@
     height: 100%;
     background: #050505;
     overflow: hidden;
+    position: relative;
 }
 
 .fade {
-    position: relative;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    min-height: 60vh;
-    top: -25px;
-    background-image: linear-gradient(0deg, transparent, black 75%);
+    height: 50vh;
+    background-image: linear-gradient(to top, black 75%, transparent);
     z-index: 1;
 }
 
@@ -28,16 +29,17 @@
     perspective: 400px;
     text-align: justify;
     max-width: 100%;
-    /* Adjusted to make text wider */
     margin: 0 auto;
-    /* Center the text block */
+    overflow: hidden;
+    /* Added to ensure the content is clipped */
 }
 
 .crawl {
     position: relative;
     top: 9999px;
     transform-origin: 50% 100%;
-    animation: crawl 60s linear;
+    animation: crawl 60s linear infinite;
+    /* Added 'infinite' to restart the animation */
 }
 
 .crawl>.title {
@@ -52,7 +54,7 @@
 
 @keyframes crawl {
     0% {
-        top: 0;
+        top: 100%;
         transform: rotateX(20deg) translateZ(0);
     }
 

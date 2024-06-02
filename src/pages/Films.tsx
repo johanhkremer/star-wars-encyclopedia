@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
 import { getFilms } from '../services/StarWarsAPI';
 import { StarWarsFilms } from '../types/StarWarsAPI.types';
+import { useState, useEffect } from 'react';
 import FilmCards from '../components/FilmCards';
-import Search from '../components/Search';
 import Pagination from '../components/Pagination';
+import Search from '../components/Search';
 
 const Films = () => {
     const [error, setError] = useState<string | null>(null);
@@ -68,3 +68,4 @@ const Films = () => {
 };
 
 export default Films;
+

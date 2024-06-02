@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import { StarWarsPlanet } from '../types/StarWarsAPI.types';
-import { getPlanet } from '../services/StarWarsAPI';
 import { Card, Col, ListGroup, Row } from 'react-bootstrap';
+import { getPlanet } from '../services/StarWarsAPI';
 import { Link, useParams } from 'react-router-dom';
+import { StarWarsPlanet } from '../types/StarWarsAPI.types';
+import { useEffect, useState } from 'react';
 
 const Planet = () => {
-    const { id } = useParams<{ id: string }>();
     const [error, setError] = useState<string | null>(null)
     const [loading, setLoading] = useState<boolean>(false);
     const [planet, setPlanet] = useState<StarWarsPlanet | null>(null);
+    const { id } = useParams<{ id: string }>();
 
     useEffect(() => {
         const fetchPlanet = async () => {

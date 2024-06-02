@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react';
 import { getVehicles } from '../services/StarWarsAPI';
 import { StarWarsVehicles } from '../types/StarWarsAPI.types';
-import VehiclesCards from '../components/VehiclesCards';
-import Search from '../components/Search';
+import { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
+import Search from '../components/Search';
+import VehiclesCards from '../components/VehiclesCards';
 
 const Vehicles = () => {
     const [error, setError] = useState<string | null>(null);
-    const [vehiclesResults, setVehiclesResults] = useState<StarWarsVehicles[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [page, setPage] = useState<number>(1);
     const [totalPages, setTotalPages] = useState<number>(1);
+    const [vehiclesResults, setVehiclesResults] = useState<StarWarsVehicles[]>([]);
 
     useEffect(() => {
         fetchVehicles('', page);

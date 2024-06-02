@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import { StarWarsFilm } from '../types/StarWarsAPI.types';
-import { getFilm } from '../services/StarWarsAPI';
 import { Figure, Card, Col, Row } from 'react-bootstrap';
+import { getFilm } from '../services/StarWarsAPI';
 import { Link, useParams } from 'react-router-dom';
+import { StarWarsFilm } from '../types/StarWarsAPI.types';
+import { useEffect, useState } from 'react';
 
 const Film = () => {
-    const { id } = useParams<{ id: string }>();
     const [error, setError] = useState<string | null>(null)
-    const [loading, setLoading] = useState<boolean>(false);
     const [film, setFilm] = useState<StarWarsFilm | null>(null);
+    const [loading, setLoading] = useState<boolean>(false);
+    const { id } = useParams<{ id: string }>();
 
     useEffect(() => {
         const fetchFilm = async () => {

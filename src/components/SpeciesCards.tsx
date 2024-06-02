@@ -1,7 +1,7 @@
+import { Col, Row } from 'react-bootstrap';
+import { StarWarsSpeciesMuliple } from '../types/StarWarsAPI.types';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { StarWarsSpeciesMuliple } from '../types/StarWarsAPI.types';
-import { Col, Row } from 'react-bootstrap';
 
 interface SpeciesCardProps {
     species: StarWarsSpeciesMuliple[];

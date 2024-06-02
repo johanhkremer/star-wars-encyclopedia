@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
 import { getSpecies } from '../services/StarWarsAPI';
 import { StarWarsSpeciesMuliple } from '../types/StarWarsAPI.types';
-import SpeciesCards from '../components/SpeciesCards';
-import Search from '../components/Search';
+import { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
+import Search from '../components/Search';
+import SpeciesCards from '../components/SpeciesCards';
 
 const Species = () => {
     const [error, setError] = useState<string | null>(null);
-    const [speciesResults, setSpeciesResults] = useState<StarWarsSpeciesMuliple[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [page, setPage] = useState<number>(1);
+    const [speciesResults, setSpeciesResults] = useState<StarWarsSpeciesMuliple[]>([]);
     const [totalPages, setTotalPages] = useState<number>(1);
 
     useEffect(() => {

@@ -1,7 +1,7 @@
-import Card from 'react-bootstrap/Card';
-import { StarWarsPeople } from '../types/StarWarsAPI.types';
-import { Col, Row } from 'react-bootstrap';
 import '../assets/styles/scss/peopleCards.scss'
+import { Col, Row } from 'react-bootstrap';
+import { StarWarsPeople } from '../types/StarWarsAPI.types';
+import Card from 'react-bootstrap/Card';
 
 interface PeopleCardsProps {
     people: StarWarsPeople[];

@@ -5,10 +5,10 @@ import { Card, Col, ListGroup, Row } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 
 const SpeciesSingle = () => {
-    const { id } = useParams<{ id: string }>();
     const [error, setError] = useState<string | null>(null)
     const [loading, setLoading] = useState<boolean>(false);
     const [speciesSingle, setSpeciesSingle] = useState<StarWarsSpeciesSingle | null>(null);
+    const { id } = useParams<{ id: string }>();
 
     useEffect(() => {
         const fetchSpeciesSingle = async () => {

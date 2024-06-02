@@ -1,4 +1,3 @@
-/* Global styles */
 body {
     background-color: #212529;
     color: #ffffff;
@@ -19,7 +18,6 @@ li {
     box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.2);
 }
 
-/* Global link styles */
 a,
 .nav-link {
     color: #000000;
@@ -36,7 +34,6 @@ a,
     }
 }
 
-/* Styles for links within cards */
 .card-link {
     color: #962424;
     font-weight: bolder;
@@ -53,7 +50,6 @@ a,
     }
 }
 
-/* Global button styles */
 button,
 .btn {
     background-color: #EEDB00;
@@ -82,7 +78,6 @@ button,
     }
 }
 
-/* Navbar-specific link styles */
 .navbar .nav-link {
     color: #FFD700;
     transition: color 0.3s ease;
@@ -96,14 +91,8 @@ button,
     }
 }
 
-/* Global image styles */
 img {
-    // border: 1px solid #ffffff;
-    /* White frame */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    /* Shadow effect */
     border-radius: 0.25rem;
-    /* Optional: rounded corners */
     transition: box-shadow 0.3s ease;
-    /* Smooth transition for shadow */
 }

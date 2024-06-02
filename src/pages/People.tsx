@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
 import { getPeople } from '../services/StarWarsAPI';
 import { StarWarsPeople } from '../types/StarWarsAPI.types';
+import { useState, useEffect } from 'react';
+import Pagination from '../components/Pagination';
 import PeopleCards from '../components/PeopleCards';
 import Search from '../components/Search';
-import Pagination from '../components/Pagination';
 
 const People = () => {
     const [error, setError] = useState<string | null>(null);
-    const [peopleResults, setPeopleResults] = useState<StarWarsPeople[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [page, setPage] = useState<number>(1);
+    const [peopleResults, setPeopleResults] = useState<StarWarsPeople[]>([]);
     const [totalPages, setTotalPages] = useState<number>(1);
 
     useEffect(() => {

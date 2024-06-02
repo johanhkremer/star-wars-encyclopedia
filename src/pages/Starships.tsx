@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
 import { getStarships } from '../services/StarWarsAPI';
 import { StarWarsStarships } from '../types/StarWarsAPI.types';
-import StarshipsCards from '../components/StarshipsCards';
-import Search from '../components/Search';
+import { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
+import Search from '../components/Search';
+import StarshipsCards from '../components/StarshipsCards';
 
 const Starships = () => {
     const [error, setError] = useState<string | null>(null);
-    const [starshipsResults, setStarshipsResults] = useState<StarWarsStarships[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [page, setPage] = useState<number>(1);
+    const [starshipsResults, setStarshipsResults] = useState<StarWarsStarships[]>([]);
     const [totalPages, setTotalPages] = useState<number>(1);
 
     useEffect(() => {
