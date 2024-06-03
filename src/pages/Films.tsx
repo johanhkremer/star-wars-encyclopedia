@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import FilmCards from '../components/FilmCards';
 import Pagination from '../components/Pagination';
 import Search from '../components/Search';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Films = () => {
     const [error, setError] = useState<string | null>(null);
@@ -44,7 +45,7 @@ const Films = () => {
         <>
             <h1>Films</h1>
             <Search searchFunction={handleSearch} onSearchResults={setFilmsResults} />
-            {loading && <p>Loading...</p>}
+            {loading && <LoadingSpinner />}
             {error && <p>Error: {error}</p>}
             {!loading && !error && filmsResults.length > 0 && (
                 <FilmCards films={filmsResults} />

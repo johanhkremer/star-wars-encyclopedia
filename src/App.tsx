@@ -16,6 +16,7 @@ import Starships from './pages/Starships'
 import Vehicle from "./pages/Vehicle"
 import Vehicles from './pages/Vehicles'
 import './assets/styles/scss/app.scss'
+import './assets/styles/scss/stars.scss'
 
 function App() {
 
@@ -41,6 +42,13 @@ function App() {
           <Route path="/vehicles/:id" element={<Vehicle />} />
         </Routes>
       </Container>
+
+      <div className="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+      </div>
     </div>
   )
 }

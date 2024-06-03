@@ -3,6 +3,7 @@ import { getFilm } from '../services/StarWarsAPI';
 import { Link, useParams } from 'react-router-dom';
 import { StarWarsFilm } from '../types/StarWarsAPI.types';
 import { useEffect, useState } from 'react';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Film = () => {
     const [error, setError] = useState<string | null>(null)
@@ -38,6 +39,7 @@ const Film = () => {
 
     return (
         <>
+            {loading && <LoadingSpinner />}
             {film && (
                 <Row className="justify-content-center mt-3 mb-3">
                     <Col xs={12} md={8} lg={10}>
@@ -104,7 +106,6 @@ const Film = () => {
                     </Col>
                 </Row>
             )}
-            {loading && <p>Loading...</p>}
             {error && <p>Something went wrong: {error}</p>}
         </>
     );

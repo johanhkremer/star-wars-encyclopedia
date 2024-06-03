@@ -3,6 +3,7 @@ import { getPerson } from '../services/StarWarsAPI';
 import { Link, useParams } from 'react-router-dom';
 import { StarWarsPerson } from '../types/StarWarsAPI.types';
 import { useEffect, useState } from 'react';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Person = () => {
     const [error, setError] = useState<string | null>(null)
@@ -38,7 +39,9 @@ const Person = () => {
 
     return (
         <>
-            {loading && <p>Loading...</p>}
+            {loading && <LoadingSpinner />}
+
+            {error && <p>Something went wrong: {error}</p>}
 
             {person && (
 
@@ -98,8 +101,6 @@ const Person = () => {
                 </Row>
 
             )}
-
-            {error && <p>Something went wrong: {error}</p>}
         </>
     );
 };

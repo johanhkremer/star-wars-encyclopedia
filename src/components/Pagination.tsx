@@ -1,4 +1,5 @@
 import Button from "react-bootstrap/Button";
+import '../assets/styles/scss/zIndex.scss'
 
 interface PaginationProps {
     hasNextPage: boolean;
@@ -18,7 +19,7 @@ const Pagination: React.FC<PaginationProps> = ({
     totalPages,
 }) => {
     return (
-        <div className="d-flex justify-content-between align-items-center">
+        <div className="d-flex justify-content-between align-items-center z-index-1">
             <div className="prev mb-3">
                 <Button
                     disabled={!hasPreviousPage}

@@ -3,6 +3,7 @@ import { getStarship } from '../services/StarWarsAPI';
 import { Link, useParams } from 'react-router-dom';
 import { StarWarsStarship } from '../types/StarWarsAPI.types';
 import { useEffect, useState } from 'react';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Starship = () => {
     const [error, setError] = useState<string | null>(null);
@@ -38,7 +39,10 @@ const Starship = () => {
 
     return (
         <>
-            {loading && <p>Loading...</p>}
+            {loading && <LoadingSpinner />}
+
+            {error && <p>Something went wrong: {error}</p>}
+
             {starship && (
                 <Row className="justify-content-center mt-3 mb-3">
                     <Col xs={12} md={8} lg={10}>
@@ -72,7 +76,6 @@ const Starship = () => {
                     </Col>
                 </Row>
             )}
-            {error && <p>Something went wrong: {error}</p>}
         </>
     );
 };

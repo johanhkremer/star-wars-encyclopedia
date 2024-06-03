@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
 import Search from '../components/Search';
 import SpeciesCards from '../components/SpeciesCards';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Species = () => {
     const [error, setError] = useState<string | null>(null);
@@ -44,7 +45,7 @@ const Species = () => {
         <>
             <h1>Species</h1>
             <Search searchFunction={handleSearch} onSearchResults={setSpeciesResults} />
-            {loading && <p>Loading species...</p>}
+            {loading && <LoadingSpinner />}
             {error && <p>Error: {error}</p>}
             {!loading && !error && speciesResults.length > 0 && (
                 <SpeciesCards species={speciesResults} />

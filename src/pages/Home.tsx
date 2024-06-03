@@ -1,6 +1,6 @@
 import '../assets/styles/scss/home.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
+import '../assets/styles/scss/stars.scss'
 
 const Home: React.FC = () => {
     return (
@@ -23,3 +23,4 @@ const Home: React.FC = () => {
 }
 
 export default Home;
+

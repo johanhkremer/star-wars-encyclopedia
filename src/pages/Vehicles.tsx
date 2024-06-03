@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
 import Search from '../components/Search';
 import VehiclesCards from '../components/VehiclesCards';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Vehicles = () => {
     const [error, setError] = useState<string | null>(null);
@@ -44,7 +45,7 @@ const Vehicles = () => {
         <>
             <h1>Vehicles</h1>
             <Search searchFunction={handleSearch} onSearchResults={setVehiclesResults} />
-            {loading && <p>Loading...</p>}
+            {loading && <LoadingSpinner />}
             {error && <p>Error: {error}</p>}
             {!loading && !error && vehiclesResults.length > 0 && (
                 <VehiclesCards vehicles={vehiclesResults} />

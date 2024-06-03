@@ -3,6 +3,7 @@ import { StarWarsSpeciesSingle } from '../types/StarWarsAPI.types';
 import { getSpeciesSingle } from '../services/StarWarsAPI';
 import { Card, Col, ListGroup, Row } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const SpeciesSingle = () => {
     const [error, setError] = useState<string | null>(null)
@@ -38,7 +39,8 @@ const SpeciesSingle = () => {
 
     return (
         <>
-            {loading && <p>Loading...</p>}
+            {loading && <LoadingSpinner />}
+
             {error && <p>Something went wrong: {error}</p>}
 
             {speciesSingle && (

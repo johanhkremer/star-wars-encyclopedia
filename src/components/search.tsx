@@ -29,7 +29,7 @@ const Search = <T,>({ searchFunction }: SearchProps<T>): JSX.Element => {
 
     return (
         <>
-            <Form className='inline mb-3' onSubmit={handleSearch}>
+            <Form className='inline mb-3 z-index-1' onSubmit={handleSearch}>
                 <Row>
                     <Col xs="auto">
                         <Form.Control
