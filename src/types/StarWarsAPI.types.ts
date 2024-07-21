@@ -6,7 +6,7 @@ export interface StarWarsFilms {
     opening_crawl: string,
     director: string,
     producer: string,
-    release_date: String,
+    release_date: string,
     image_url: string,
     created: string,
     edited: string,
@@ -95,7 +95,7 @@ export interface StarWarsPerson {
         id: number;
         title: string;
     }[];
-    species: any[];
+    species: number;
     starships: {
         id: number;
         name: string;

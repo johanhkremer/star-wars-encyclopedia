@@ -1,6 +1,5 @@
 import '../assets/styles/scss/home.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../assets/styles/scss/stars.scss'
 
 const Home: React.FC = () => {
     return (
