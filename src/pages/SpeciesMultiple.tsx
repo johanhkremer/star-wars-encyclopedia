@@ -2,7 +2,7 @@ import { getSpecies } from '../services/StarWarsAPI';
 import { StarWarsSpeciesMuliple } from '../types/StarWarsAPI.types';
 import { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
-import Search from '../components/Search';
+import Search from '../components/search';
 import SpeciesCards from '../components/SpeciesCards';
 import LoadingSpinner from '../components/LoadingSpinner';
 

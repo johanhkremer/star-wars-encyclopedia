@@ -3,7 +3,7 @@ import { StarWarsPeople } from '../types/StarWarsAPI.types';
 import { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
 import PeopleCards from '../components/PeopleCards';
-import Search from '../components/Search';
+import Search from '../components/search';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const People = () => {

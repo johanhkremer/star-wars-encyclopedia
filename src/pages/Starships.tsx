@@ -2,7 +2,7 @@ import { getStarships } from '../services/StarWarsAPI';
 import { StarWarsStarships } from '../types/StarWarsAPI.types';
 import { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
-import Search from '../components/Search';
+import Search from '../components/search';
 import StarshipsCards from '../components/StarshipsCards';
 import LoadingSpinner from '../components/LoadingSpinner';
 

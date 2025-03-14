@@ -3,7 +3,7 @@ import { StarWarsFilms } from '../types/StarWarsAPI.types';
 import { useState, useEffect } from 'react';
 import FilmCards from '../components/FilmCards';
 import Pagination from '../components/Pagination';
-import Search from '../components/Search';
+import Search from '../components/search';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const Films = () => {

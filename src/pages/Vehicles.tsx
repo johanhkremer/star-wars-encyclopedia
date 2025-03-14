@@ -2,7 +2,7 @@ import { getVehicles } from '../services/StarWarsAPI';
 import { StarWarsVehicles } from '../types/StarWarsAPI.types';
 import { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
-import Search from '../components/Search';
+import Search from '../components/search';
 import VehiclesCards from '../components/VehiclesCards';
 import LoadingSpinner from '../components/LoadingSpinner';
 
