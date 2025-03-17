@@ -12,12 +12,12 @@ const FilmCards: React.FC<FilmCardsProps> = ({ films }) => {
             {films.map((film) => (
                 <Col key={film.id} xs={12} sm={6} md={4} style={{ marginBottom: '1rem' }}>
                     <Card style={{ width: '100%', height: '100%' }}>
-                        <Card.Title className='p-3'>{film.title}</Card.Title>
                         <Card.Img
                             variant="top"
                             src={film.image_url}
-                            style={{ height: 'auto', objectFit: 'cover' }} />
+                            style={{ width: '100%', height: '400px', objectFit: 'cover' }} />
                         <Card.Body style={{ height: 'auto', overflow: 'hidden' }}>
+                            <Card.Title className=''>{film.title}</Card.Title>
                             <Card.Link href={`/films/${film.id}`}>Read more</Card.Link>
                         </Card.Body>
                     </Card>

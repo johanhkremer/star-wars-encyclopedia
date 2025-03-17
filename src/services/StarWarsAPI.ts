@@ -16,8 +16,6 @@ import {
 
 const baseURL = import.meta.env.VITE_BASE_URL;
 
-const FAKE_DELAY = 1500;
-
 const instance = axios.create({
     baseURL: baseURL,
     timeout: 10000,
@@ -37,15 +35,11 @@ interface ApiResponse<T> {
 export const getResource = async <T>(endpoint: string, params?: object): Promise<ApiResponse<T>> => {
     const response = await instance.get<ApiResponse<T>>(endpoint, { params });
 
-    !!FAKE_DELAY && await new Promise(r => setTimeout(r, FAKE_DELAY));
-
     return response.data; // Return the full response data
 };
 
 export const getResourceById = async <T>(endpoint: string, id: number): Promise<T> => {
     const response = await instance.get<T>(`${endpoint}/${id}`);
-
-    !!FAKE_DELAY && await new Promise(r => setTimeout(r, FAKE_DELAY))
 
     return response.data;
 };
